@@ -25,19 +25,21 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Form
-          weight={this.state.weight}
-          height={this.state.height}
-          onChangeHandler={this.onChangeHandler}
-          onSubmitHandler={this.onSubmitHandler}
-        />
-        {this.state.bmiValue && (
-          <Message
-            bmiValue={this.state.bmiValue}
-            bmiMessage={this.state.bmiMessage}
+      <div className="ui column stackable center page grid">
+        <div className="column">
+          <Form
+            weight={this.state.weight}
+            height={this.state.height}
+            onChangeHandler={this.onChangeHandler}
+            onSubmitHandler={this.onSubmitHandler}
           />
-        )}
+          {this.state.bmiValue && (
+            <Message
+              bmiValue={this.state.bmiValue}
+              bmiMessage={this.state.bmiMessage}
+            />
+          )}
+        </div>
       </div>
     );
   }
