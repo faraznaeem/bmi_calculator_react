@@ -1,14 +1,15 @@
 import React from "react";
 
-const Form = (props) => {
+const Form = props => {
   return (
-    <form>
+    <form onSubmit={props.onSubmitHandler}>
       <label htmlFor="weight">Weight</label>
       <input
         type="number"
-        name="weight"
         required
         placeholder="Weight in kgs"
+        value={props.weight}
+        name="weight"
         id="weight"
         onChange={props.onChangeHandler}
       />
@@ -16,13 +17,15 @@ const Form = (props) => {
       <input
         type="number"
         required
-        placeholder="height in cm"
+        placeholder="Height in cm"
+        value={props.height}
         name="height"
         id="height"
         onChange={props.onChangeHandler}
       />
-      <button>Calculate BMI</button>
+      <button id="calculate">Calculate BMI</button>
     </form>
   );
 };
+
 export default Form;

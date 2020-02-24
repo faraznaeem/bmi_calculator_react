@@ -1,10 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-describe("form", () => {
+import Form from "../components/Form";
+
+describe("Form", () => {
   const handleChange = jest.fn();
   const handleSubmit = jest.fn();
-
   const wrapper = shallow(
     <Form
       weight="90"
@@ -15,21 +16,11 @@ describe("form", () => {
   );
 
   it("renders with weight prop", () => {
-    expect(
-      wrapper
-        .find("#weight")
-        .props()
-        .value.eoEqual("90")
-    );
+    expect(wrapper.find("#weight").props().value).toEqual("90");
   });
 
   it("renders with height prop", () => {
-    expect(
-      wrapper
-        .find("#height")
-        .props()
-        .value.eoEqual("190")
-    );
+    expect(wrapper.find("#height").props().value).toEqual("190");
   });
 
   it("on change the onChangeHandler is being called", () => {
